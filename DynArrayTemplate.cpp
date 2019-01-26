@@ -52,6 +52,11 @@ class DynArray
 
      void insert(int value, int index)
      {
+          if (index == count)
+          {
+               append(value);
+               return;
+          }
           if (get_item(index) == -1) return ;     //item was not found
 
           if (count == capacity)
