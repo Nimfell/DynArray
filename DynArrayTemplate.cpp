@@ -57,7 +57,8 @@ class DynArray
                append(value);
                return;
           }
-          if (get_item(index) == -1) return ;     //item was not found
+          if (get_item(index) == -1)
+               throw "Item was not found";        //item was not found
 
           if (count == capacity)
           {
@@ -75,7 +76,8 @@ class DynArray
 
      void remove(int index)
      {
-          if (get_item(index) == -1) return ;     //item was not found
+          if (get_item(index) == -1)
+               throw "Item was not found";        //item was not found
 
           for (int i = index; i < count; i++)     //copy to the left
           {
@@ -87,6 +89,6 @@ class DynArray
                int new_capacity =  capacity * 2 / 3;   //array reduction formula
                make_array(new_capacity);
           }
-          count -= 1; 
+          count -= 1;
      }
-}; 
+};
